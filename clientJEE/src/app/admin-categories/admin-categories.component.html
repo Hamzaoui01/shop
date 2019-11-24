@@ -1,0 +1,45 @@
+<div>
+  <button class="btn btn-success" (click)="onNewCat()" >
+    Ajouter
+  </button>
+</div>
+<div *ngIf="mode=='new-cat'" class="col-md-6">
+  <form #f="ngForm" (ngSubmit)="onSaveCat(f.value)" >
+    <div class="form-grop">
+      <label class="control-label" for="">Name</label>
+      <input type="text" name="name" class="form-control" ngModel>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+</div>
+<div *ngIf="_currentCat&&mode=='update-cat'" class="col-md-6">
+  <form #f="ngForm" (ngSubmit)="onPutCat(f.value)" >
+    <div class="form-grop">
+    <label class="control-label" for="">Name</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="_currentCat.name" ngModel>
+    </div>
+    <button type="submit">Save</button>
+  </form>
+</div>
+<table *ngIf="categories&&mode=='list'" class="table">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let c of categories._embedded.categories">
+   <td>{{c.id}}</td>
+   <td>{{c.name}}</td>
+   <td>
+     <button class="btn btn-danger" (click)="onUpdate(c)">
+       Update
+     </button>
+   </td>
+   <td>
+    <button class="btn btn-danger" (click)="onDelete(c)">
+      Delete
+    </button>
+   </td>
+  </tr>
+</table>

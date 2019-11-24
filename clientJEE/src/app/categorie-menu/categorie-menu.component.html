@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-2">
+    <ul class="list-group" *ngIf="categories">
+      <li class="list-group-item" *ngFor="let c of categories" (click)="onGetProducts(c)">
+        <p>{{c.name}}</p>
+      </li>
+    </ul>
+  </div>
+  <!-- product div *********** -->
+  <div class="col-md-9" *ngIf="products">
+      <div style="margin-top: 2px;">
+
+          <div *ngIf="products" class="row">
+            <div class="col-sm-3" *ngFor="let p of products">
+              <div class="col-item">
+                <div class="photo">
+                  <img src="https://cdn.shopify.com/s/files/1/2999/1646/products/Daily_Hydra_Mist_480x480.png?v=1566368433"
+                    class="img-responsive" alt="a" />
+                </div>
+                <div class="info text-center">
+                  <div class="row ">
+                    <div class="price col-md-12">
+                      <h5>
+                        {{p.name}}</h5>
+                      <h5 class="price-text-color">
+                        {{p.price}} DH</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="hidden-sm col-md-12">
+                      <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                      </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                      </i><i class="fa fa-star"></i>
+                    </div>
+                  </div>
+                  <div class="separator clear-left">
+                    <p class="btn-add">
+                      <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to
+                        cart</a></p>
+                    <p class="btn-details">
+                      <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                  </div>
+                  <div class="clearfix">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+
