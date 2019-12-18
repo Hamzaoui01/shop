@@ -6,3 +6,7 @@ Is an independante project for generating jwt tokens for every user loged in the
 
 ## Application service
 The application check the jwt availibility and permit for every user's role a diffrent acces in the application.
+
+##CLient JEE
+It's a simple project for the Front End side.
+as developped by Angular 7.
